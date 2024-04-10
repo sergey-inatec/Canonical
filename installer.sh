@@ -26,9 +26,7 @@ sleep 30
 # Mount the disk image
 echo "Mounting the disk image..."
 mkdir -p "$MOUNT_DIR"
-#sudo mount -o loop "$DISK_IMAGE" "$MOUNT_DIR"
-#sudo mount -o  /dev/loop4 $MOUNT_DIR
-sudo mount -o remount,rw /dev/loop4 "$MOUNT_DIR"
+sudo mount -o romount,rw loop "$DISK_IMAGE" "$MOUNT_DIR"
 
 # Print "hello world" inside the mounted image
 echo "hello world" | sudo tee "$MOUNT_DIR/$HELLO_WORLD_FILE"
